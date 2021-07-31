@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="Youtube_videos_downloaderFrame">
-		<size>400,210</size>
-		<minsize>400,210</minsize>
-		<maxsize>400,210</maxsize>
+		<size>400,240</size>
+		<minsize>400,240</minsize>
+		<maxsize>400,240</maxsize>
 		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="FilePathTextBox" member="yes">
 			<value>Path to the youtube-dl file</value>
 			<pos>16,16</pos>
@@ -25,16 +25,19 @@
 			<label>Reset the list</label>
 			<pos>16,128</pos>
 			<size>144,24</size>
+			<handler function="OnResterListButtonClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTON3" variable="DownloadButton" member="yes">
 			<label>Download the videos</label>
 			<pos>240,96</pos>
 			<size>144,26</size>
+			<handler function="OnDownloadButtonClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTON4" variable="AddVideoButton" member="yes">
 			<label>Add video to the list</label>
 			<pos>16,160</pos>
 			<size>144,24</size>
+			<handler function="OnAddVideoButtonClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxMenuBar" variable="MenuBar1" member="no">
 			<object class="wxMenu" variable="Menu1" member="no">

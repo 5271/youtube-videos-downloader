@@ -136,20 +136,53 @@ void Youtube_videos_downloaderFrame::OnAbout(wxCommandEvent& event)
 
 void Youtube_videos_downloaderFrame::OnTextCtrl1Text(wxCommandEvent& event)
 {
+
 }
 
 void Youtube_videos_downloaderFrame::OnButton1Click(wxCommandEvent& event)
 {
+
 }
 
 void Youtube_videos_downloaderFrame::OnResterListButtonClick(wxCommandEvent& event)
 {
+
 }
 
 void Youtube_videos_downloaderFrame::OnAddVideoButtonClick(wxCommandEvent& event)
 {
+    string videoURL = YoutubeLinkTextBox->GetValue().ToStdString();
+
+    bool isValid = true;
+
+    if (videoURL.substr(0, 8) == "https://")
+    {
+        if (videoURL.substr(8, 24) != "www.youtube.com/watch?v=") { isValid = false; }
+        else
+        {
+            if (videoURL.length() != 43) { isValid = false; }
+        }
+    }
+    else
+    {
+        if (videoURL.substr(0, 24) != "www.youtube.com/watch?v=") { isValid = false; }
+        else
+        {
+            if (videoURL.length() != 35) { isValid = false; }
+        }
+    }
+
+    if (isValid)
+    {
+        videos.assign(1, videoURL);
+    }
+    if (!isValid)
+    {
+        wxMessageBox("Given video URL is invalid. \nPlease enter a valid URL.", "Error");
+    }
 }
 
 void Youtube_videos_downloaderFrame::OnDownloadButtonClick(wxCommandEvent& event)
 {
+
 }
