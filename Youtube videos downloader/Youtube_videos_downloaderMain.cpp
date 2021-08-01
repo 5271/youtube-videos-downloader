@@ -193,5 +193,20 @@ void Youtube_videos_downloaderFrame::OnAddVideoButtonClick(wxCommandEvent& event
 
 void Youtube_videos_downloaderFrame::OnDownloadButtonClick(wxCommandEvent& event)
 {
+    if (!isUsingWindows)
+    {
+        for (auto const& i : videos)
+        {
+            system(("youtube-dl " + i + " &").c_str());
+        }
+    }
+    else
+    {
+        string path = FilePathTextBox->GetValue().ToStdString();
 
+        for (auto const& i : videos)
+        {
+            system((path + "youtube-dl.exe " + i + " &").c_str());
+        }
+    }
 }
