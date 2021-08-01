@@ -12,6 +12,7 @@
 
 //(*Headers(Youtube_videos_downloaderFrame)
 #include <wx/button.h>
+#include <wx/choicdlg.h>
 #include <wx/frame.h>
 #include <wx/menu.h>
 #include <wx/statusbr.h>
@@ -54,6 +55,7 @@ class Youtube_videos_downloaderFrame: public wxFrame
         wxButton* DownloadButton;
         wxButton* ResterListButton;
         wxButton* ShowListButton;
+        wxMultiChoiceDialog* MultiChoiceDialog1;
         wxStatusBar* StatusBar1;
         wxTextCtrl* FilePathTextBox;
         wxTextCtrl* YoutubeLinkTextBox;

@@ -64,5 +64,8 @@
 			<widths>-1</widths>
 			<styles>wxSB_NORMAL</styles>
 		</object>
+		<object class="wxMultiChoiceDialog" variable="MultiChoiceDialog1" member="yes">
+			<message>Are you sure want to clear the list?</message>
+		</object>
 	</object>
 </wxsmith>

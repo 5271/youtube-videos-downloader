@@ -580,8 +580,9 @@
 
 1585059103 /usr/include/wx-3.0/wx/gtk/app.h
 
-1627647766 /home/piotr/Desktop/programming/GitHub projects/youtube-videos-downloader/Youtube videos downloader/Youtube_videos_downloaderMain.h
+1627743827 /home/piotr/Desktop/programming/GitHub projects/youtube-videos-downloader/Youtube videos downloader/Youtube_videos_downloaderMain.h
 	<wx/button.h>
+	<wx/choicdlg.h>
 	<wx/frame.h>
 	<wx/menu.h>
 	<wx/statusbr.h>
@@ -996,9 +997,11 @@
 
 1585059103 /usr/include/wx-3.0/wx/gtk/textctrl.h
 
-1627646573 source:/home/piotr/Desktop/programming/GitHub projects/youtube-videos-downloader/Youtube videos downloader/Youtube_videos_downloaderMain.cpp
+1627743113 source:/home/piotr/Desktop/programming/GitHub projects/youtube-videos-downloader/Youtube videos downloader/Youtube_videos_downloaderMain.cpp
 	"Youtube_videos_downloaderMain.h"
 	<wx/msgdlg.h>
+	<string>
+	<vector>
 	<wx/intl.h>
 	<wx/string.h>
 
@@ -1053,4 +1056,12 @@
 1585059103 /usr/include/wx-3.0/wx/generic/msgdlgg.h
 
 1585059103 /usr/include/wx-3.0/wx/gtk/msgdlg.h
+
+1585059103 /usr/include/wx-3.0/wx/choicdlg.h
+	"wx/defs.h"
+	"wx/generic/choicdgg.h"
+
+1585059103 /usr/include/wx-3.0/wx/generic/choicdgg.h
+	"wx/dynarray.h"
+	"wx/dialog.h"
 

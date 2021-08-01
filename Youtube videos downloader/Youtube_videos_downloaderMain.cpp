@@ -10,7 +10,7 @@
 #include "Youtube_videos_downloaderMain.h"
 #include <wx/msgdlg.h>
 #include <string>
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -46,7 +46,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 bool isUsingWindows = false;
-list<string> videos;
+vector<string> videos;
 
 #ifdef _WIN32
     isUsingWindows = true;
@@ -104,6 +104,7 @@ Youtube_videos_downloaderFrame::Youtube_videos_downloaderFrame(wxWindow* parent,
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
+    MultiChoiceDialog1 = new wxMultiChoiceDialog(this, _("Are you sure want to clear the list\?"), wxEmptyString, 0, 0, wxCHOICEDLG_STYLE, wxDefaultPosition);
 
     Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&Youtube_videos_downloaderFrame::OnTextCtrl1Text);
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Youtube_videos_downloaderFrame::OnButton1Click);
@@ -141,12 +142,20 @@ void Youtube_videos_downloaderFrame::OnTextCtrl1Text(wxCommandEvent& event)
 
 void Youtube_videos_downloaderFrame::OnButton1Click(wxCommandEvent& event)
 {
+    string textToShow = "";
+    vector<string>::iterator it;
 
+    for (auto const& i : videos)
+    {
+        textToShow = textToShow + i + "\n";
+    }
+
+    wxMessageBox(textToShow, "Current videos in the list");
 }
 
 void Youtube_videos_downloaderFrame::OnResterListButtonClick(wxCommandEvent& event)
 {
-
+    videos.clear();
 }
 
 void Youtube_videos_downloaderFrame::OnAddVideoButtonClick(wxCommandEvent& event)
@@ -174,7 +183,7 @@ void Youtube_videos_downloaderFrame::OnAddVideoButtonClick(wxCommandEvent& event
 
     if (isValid)
     {
-        videos.assign(1, videoURL);
+        videos.push_back(videoURL);
     }
     if (!isValid)
     {
