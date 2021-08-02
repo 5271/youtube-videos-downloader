@@ -11,5 +11,3 @@ To use the program on windows you need to install youtube-dl from this link http
 To use the program on linux you just need to type this command `sudo apt install youtube-dl` and it should work.
 
 ##### If you have any problems feel free to message me about it. I'm keen to help :3
-
-###### Until this line of text is here it means that the program is not finished and it doesn't work yet.
