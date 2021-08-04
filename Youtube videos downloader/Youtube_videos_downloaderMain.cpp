@@ -94,7 +94,7 @@ Youtube_videos_downloaderFrame::Youtube_videos_downloaderFrame(wxWindow* parent,
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
     Menu2 = new wxMenu();
-    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
+    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("Manual\tF1"), _("Show info about this application"), wxITEM_NORMAL);
     Menu2->Append(MenuItem2);
     MenuBar1->Append(Menu2, _("Help"));
     SetMenuBar(MenuBar1);
@@ -131,8 +131,8 @@ void Youtube_videos_downloaderFrame::OnQuit(wxCommandEvent& event)
 
 void Youtube_videos_downloaderFrame::OnAbout(wxCommandEvent& event)
 {
-    wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
+    wxString content = wxString("To download videos you first have to enter video url of each of these videos in the \"Youtube video URL\" text box. Then you can check if all of the videos you want to download are one the list by click the \"Show list of URLs\" button. \n\nIf all of them are there, click the download button and wait until all of the videos are downloaded as mp4 files in the directory of the program.");
+    wxMessageBox(content, _("Program manual"));
 }
 
 void Youtube_videos_downloaderFrame::OnTextCtrl1Text(wxCommandEvent& event)
