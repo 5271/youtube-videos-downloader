@@ -202,11 +202,41 @@ void Youtube_videos_downloaderFrame::OnDownloadButtonClick(wxCommandEvent& event
     }
     else
     {
-        string path = FilePathTextBox->GetValue().ToStdString();
+        string inputPath = FilePathTextBox->GetValue().ToStdString();
+        string str = "";
+        string path = "";
+
+        if (inputPath[inputPath.length()-1] == '\\')
+        {
+            path = inputPath + "youtube-dl.exe";
+        }
+        else
+        {
+            for (int i = 0; i < inputPath.length(); i++)
+            {
+                if (inputPath[i] == '\\')
+                {
+                    str = "";
+                }
+                else
+                {
+                    str += inputPath[i];
+                }
+
+                if (str == "youtube-dl.exe" && i == inputPath.length() - 1)
+                {
+                    path = inputPath;
+                }
+                else if (str != "" && i == inputPath.length() - 1)
+                {
+                    path = inputPath + "\youtube-dl.exe";
+                }
+            }
+        }
 
         for (auto const& i : videos)
         {
-            system((path + "youtube-dl.exe " + i + " &").c_str());
+            system((path + " " + i + " &").c_str());
         }
     }
 }
